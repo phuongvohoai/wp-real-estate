@@ -1,1 +1,0 @@
-!function(){define(["scripts/upfront/upfront-views-editor/theme-colors/collection"],function(o){return{colors:new o(Upfront.mainData.themeColors.colors),range:Upfront.mainData.themeColors.range||0}})}();
