@@ -41,13 +41,14 @@
                                 </div>
                                 <!--end of menu module-->
                                 <div class="module widget-handle search-widget-handle left hidden-xs hidden-sm">
-                                    <div class="search">
+                                    <!--<div class="search">
                                         <i class="fa fa-search"></i>
-                                        <span class="title"><?php _e("Site Search", 'shapely'); ?></span>
+                                        <span class="title">--><?php //_e("Site Search", 'shapely'); ?><!--</span>
                                     </div>
-                                    <div class="function"><?php
-                                        get_search_form(); ?>
-                                    </div>
+                                    <div class="function">--><?php
+                                        //get_search_form(); ?>
+                                    <!--</div>-->
+									<a class="btn btn-lg btn-filled custombutton" href="#"> 800-720-0816</a>
                                 </div>
                             </div>
                             <!--end of module group-->

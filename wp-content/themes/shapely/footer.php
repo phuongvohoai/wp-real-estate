@@ -26,7 +26,7 @@
         <div class="row">
           <div class="site-info col-sm-6">
             <div class="copyright-text"><?php esc_attr(get_theme_mod( 'shapely_footer_copyright' )); ?></div>
-            <div class="footer-credits"><?php shapely_footer_info(); ?></div>
+            <div class="footer-credits"><?php kevin_footer_info(); ?></div>
           </div><!-- .site-info -->
           <div class="col-sm-6 text-right">
             <?php if( !get_theme_mod('footer_social') ) shapely_social_icons(); ?>

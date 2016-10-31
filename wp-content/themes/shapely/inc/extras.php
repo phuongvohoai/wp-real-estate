@@ -118,6 +118,13 @@ function shapely_footer_info() {
   printf( esc_html__( 'Theme by %1$s Powered by %2$s', 'shapely' ) , '<a href="https://colorlib.com/" target="_blank" title="Colorlib">Colorlib</a>', '<a href="http://wordpress.org/" target="_blank" title="WordPress.org">WordPress</a>');
 }
 
+/**
+ * function override to show the footer info, copyright information
+ */
+function kevin_footer_info() {
+  printf( esc_html__( 'Copyright © 2016 %1$s. All rights reserved.'), '<a href="" title="nhadat5sao">nhadat5sao.com</a>');
+}
+
 
 if ( ! function_exists( 'get_shapely_theme_options' ) ) {
 /**

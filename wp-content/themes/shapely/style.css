@@ -20,7 +20,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -43,8 +42,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Customs
 --------------------------------------------------------------*/
-
 
 /*--------------------------------------------------------------
 # Normalize
@@ -2535,4 +2534,160 @@ section {
 }
 .full-width {
   width: 100%;
+}
+/*--------------------------------------------------------------
+# Customs
+--------------------------------------------------------------*/
+
+.custombutton:before {
+    content: "\f095";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.custombutton {
+    font-family: "Roboto", arial, sans-serif;
+    height: 38px;
+    text-align: center;
+    border-radius: 400px;
+    line-height: 30px;
+    font-size: 18px;
+    border-radius: 400px;
+}
+.menu li a {
+	font-family: 'Roboto' !important;
+    font-size: 12px !important;
+    color: #111 !important;
+}
+.page-title {
+	font-family: 'Roboto' !important;
+}
+.post-card-item {
+  background: #fff;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+.post-image {
+	margin: 0;
+  width: 100%;
+}
+.post-image > .post-meta {
+  margin: 10px 0 0 0;
+  list-style: none;
+  font-size: 11px;
+}
+.post-image > ul > li {
+  margin-right: 12px !important;
+}
+.post-image > a > img {
+  height: 150px;
+}
+.post-card-body > .post-title {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  text-transform: inherit;
+  text-align: inherit;
+}
+.post-card-body > p {
+  font-size: 13px;
+  text-align: justify;
+}
+.read {
+  padding-left: 5%;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #FF5722;
+}
+.post-meta, .post-meta li .cat-links > a {
+  color: #3F51B5 !important;
+  font-weight: 400 !important;
+}
+.post-card-author {
+  padding: 10px 12px 2px;
+  display: table;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+.post-card-author .author-image, .post-card-author .author-name {
+  display: table-cell;
+  vertical-align: middle;
+  width: 40px;
+}
+.post-card-author .author-name {
+  padding-left: 12px;
+  width: auto;
+}
+.post-card-author img {
+  max-width: 40px;
+  max-height: 40px;
+}
+.post-card-author .author-name span {
+  display: block;
+  color: #959595;
+  font-size: 12px;
+  line-height: 12px;
+}
+.addtoany_list {
+  margin: 0px !important;
+  float: right;
+}
+.content ul.post-meta li {
+  margin-bottom: 0px !important;
+}
+.posted_on_detail > li {
+  line-height: 32px;
+}
+.post {
+  background: #fff;
+}
+.entry-header, .entry-content {
+  padding: 40px 48px;
+}
+.entry-header > h2 > a {
+  color: #000;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+.author-bio {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-right: 0px solid rgba(0, 0, 0, 0.1) !important;
+  border-left: 0px solid rgba(0, 0, 0, 0.1)!important;
+}
+.widget {
+  background-color: #fff;
+  padding: 20px !important;
+}
+.widget > h2 {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  margin: 0 0 0px 0 !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  border-bottom: 0px solid #ccc !important;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  text-transform: inherit !important;
+}
+.widget > ul {
+  list-style: none;
+  margin-left: 0px;
+}
+.widget-categories a:before, .widget_categories a:before, .widget_archive a:before, .widget_meta a:before, .widget_recent_entries a:before, .widget_pages a:before, .widget-pages a:before, .widget_recent_comments a:before, .widget_nav_menu a:before {
+  content: "\f0da";
+  font-family: "FontAwesome";
+  font-size: 12px;
+  line-height: 14px;
+  margin-right: 4px;
+}
+.search-form > input[type="text"] {
+  background: #f6f6f6;
+}
+textarea, input[type="text"], input[type="email"], input[type="tel"]{
+  background: #fff;
 }

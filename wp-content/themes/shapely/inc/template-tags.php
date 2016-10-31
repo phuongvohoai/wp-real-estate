@@ -6,6 +6,59 @@
  *
  * @package Shapely
  */
+if ( ! function_exists( 'shapely_author' ) ) :
+/**
+ * Prints HTML with meta information for author.
+ */
+function shapely_author() { ?>
+    <div class="post-card-author">
+        <div class="author-image">
+			<?php
+				add_filter('get_avatar','add_gravatar_class');
+				echo get_avatar( get_the_author_meta( 'ID' ), 40,"" );
+			?>
+        </div>
+        <div class="author-name">
+            <span>đăng bởi <?php the_author(); ?></span>
+     	</div>
+    </div>
+<?php }
+function add_gravatar_class($class) {
+    $class = str_replace("class='avatar", "class='avatar img-circle", $class);
+    return $class;
+}
+endif;
+
+if ( ! function_exists( 'shapely_posted_on_detail' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function shapely_posted_on_detail() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	); ?>
+
+	<ul class="post-meta posted_on_detail" style="width: 100%; padding: 8px;">
+        <li><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>" title="<?php echo get_the_author(); ?>"><?php
+				add_filter('get_avatar','add_gravatar_class');
+				echo get_avatar( get_the_author_meta( 'ID' ), 32,"" ); ?>
+				<span style="color: #3F51B5; margin-left: 10px;">đăng bởi <?php the_author(); ?></span>
+			</a>
+		</li>
+        <li><i class="fa fa-calendar"></i><span class="posted-on"><?php echo $time_string; ?></span></li>
+        <?php shapely_post_category(); ?>
+    </ul><?php
+    echo ( is_archive() ) ? '<hr>' : '';
+}
+endif;
 
 if ( ! function_exists( 'shapely_posted_on' ) ) :
 /**
@@ -25,7 +78,7 @@ function shapely_posted_on() {
 	); ?>
 
 	<ul class="post-meta">
-        <li><i class="fa fa-user"></i><span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>" title="<?php echo get_the_author(); ?>"><?php the_author(); ?></a></span></li>
+        <!--<li><i class="fa fa-user"></i><span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>" title="<?php echo get_the_author(); ?>"><?php the_author(); ?></a></span></li>-->
         <li><i class="fa fa-calendar"></i><span class="posted-on"><?php echo $time_string; ?></span></li>
         <?php shapely_post_category(); ?>
     </ul><?php
@@ -123,7 +176,7 @@ function shapely_post_category() {
     $category = get_the_category();
     if ( !empty( $category ) ) {
       $i = ( $category[0]->slug == "uncategorized" && array_key_exists( '1', $category ) ) ? 1 : 0 ;
-      echo '<li><i class="fa fa-folder-open-o"></i><span class="cat-links"><a href="' . get_category_link( $category[$i]->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'shapely' ), $category[$i]->name ) . '" ' . '>' . $category[$i]->name.'</a></span></li> ';
+      echo '<li><i class="fa fa-bookmark-o"></i><span class="cat-links"><a href="' . get_category_link( $category[$i]->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'shapely' ), $category[$i]->name ) . '" ' . '>' . $category[$i]->name.'</a></span></li> ';
     }
 }
 endif;

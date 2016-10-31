@@ -11,7 +11,7 @@ get_header(); ?>
 
 	
     <?php $layout_class = ( function_exists('shapely_get_layout_class') ) ? shapely_get_layout_class(): ''; ?>  
-        <section id="primary" class="content-area col-md-9 mb-xs-24 <?php echo $layout_class; ?>">
+        <section id="primary" class="content-area row <?php echo $layout_class; ?>">
           <main id="main" class="site-main" role="main">
 
 		<?php
@@ -46,5 +46,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
